@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://biwgphcawcr2y"]
+
+[ext_resource type="PackedScene" uid="uid://co81mke24lwsy" path="res://equipements/backpack/BP_000/BP_000.gltf" id="1_avy6t"]
+
+[node name="Mesh" instance=ExtResource("1_avy6t")]
+transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, 0, 0, 0)

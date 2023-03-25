@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://co3h4xg1tr1n4"]
+
+[ext_resource type="PackedScene" uid="uid://bemoygjeu1yai" path="res://equipements/Rifle/Rifle_000/Rifle_000.gltf" id="1_k6un1"]
+
+[node name="Mesh" instance=ExtResource("1_k6un1")]

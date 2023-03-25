@@ -1,0 +1,120 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v3.3.27",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Rifle_000",
+            "rotation" : [
+                0.7041013240814209,
+                0.03527494892477989,
+                -0.035063087940216064,
+                0.7083556056022644
+            ],
+            "scale" : [
+                0.05480558052659035,
+                0.28073203563690186,
+                0.05480558052659035
+            ],
+            "translation" : [
+                -0.009495079517364502,
+                0.009843945503234863,
+                0.007369518280029297
+            ]
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 1910,
+            "max" : [
+                1,
+                1.4249107837677002,
+                2.3352036476135254
+            ],
+            "min" : [
+                -1,
+                -1,
+                -1.674354076385498
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 1910,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 1910,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 2886,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 22920,
+            "byteOffset" : 0,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 22920,
+            "byteOffset" : 22920,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 15280,
+            "byteOffset" : 45840,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5772,
+            "byteOffset" : 61120,
+            "target" : 34963
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 66892,
+            "uri" : "Rifle_000.bin"
+        }
+    ]
+}

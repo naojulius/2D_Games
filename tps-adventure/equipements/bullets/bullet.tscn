@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bx410xvsw2aj1"]
+
+[ext_resource type="PackedScene" uid="uid://cfi864wfihd6w" path="res://equipements/bullets/bullet_000/mesh.tscn" id="1_8lyhl"]
+[ext_resource type="Script" path="res://equipements/bullets/bullet.gd" id="1_80535"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ptat8"]
+radius = 0.183641
+height = 1.03527
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5yy7i"]
+radius = 0.315563
+height = 2.28097
+
+[sub_resource type="BoxMesh" id="BoxMesh_wsga3"]
+size = Vector3(0.3, 0.3, 5)
+
+[node name="Bullet" type="CharacterBody3D"]
+transform = Transform3D(-2.18557e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.18557e-09, 0, 0, 0)
+script = ExtResource("1_80535")
+
+[node name="Mesh" parent="." instance=ExtResource("1_8lyhl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="BulletCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.3078e-08, 0.299191, -0.954193, 1, -4.37114e-08, 0, -4.17091e-08, -0.954193, -0.299191, 0.0754126, 0, -6.66134e-16)
+shape = SubResource("CapsuleShape3D_ptat8")
+
+[node name="BulletHitArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BulletHitArea"]
+transform = Transform3D(2.73629e-09, 0.0625989, -0.998039, 1, -4.37114e-08, -5.52277e-16, -4.36257e-08, -0.998039, -0.0625989, 0.146525, 0, -2.66454e-15)
+shape = SubResource("CapsuleShape3D_5yy7i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, -5.54513e-08, 0, 1.26858)
+visible = false
+mesh = SubResource("BoxMesh_wsga3")
+
+[connection signal="area_entered" from="BulletHitArea" to="." method="_on_bullet_hit_area_area_entered"]

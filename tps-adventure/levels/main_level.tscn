@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5fpxyvcdxmkf"]
+
+[ext_resource type="PackedScene" uid="uid://c1axgsm6v06ce" path="res://levels/isalo/mesh.tscn" id="1_ptiht"]
+[ext_resource type="Script" path="res://levels/main_level.gd" id="1_uit0c"]
+
+[node name="MainLevel" type="Node3D"]
+script = ExtResource("1_uit0c")
+
+[node name="Mesh" parent="." instance=ExtResource("1_ptiht")]

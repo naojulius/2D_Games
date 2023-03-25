@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbqqtu2mgjnkq"]
+
+[ext_resource type="PackedScene" uid="uid://byac5yh4cd6e5" path="res://natures/Cloud_2.gltf" id="1_keed1"]
+
+[node name="Cloud_2" instance=ExtResource("1_keed1")]

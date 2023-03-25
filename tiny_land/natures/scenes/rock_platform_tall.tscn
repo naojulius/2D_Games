@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://kdivj511a3iy"]
+
+[ext_resource type="PackedScene" uid="uid://dflxf1ns4ldn4" path="res://natures/RockPlatform_Tall.gltf" id="1_uxite"]
+
+[node name="RockPlatform_Tall" instance=ExtResource("1_uxite")]

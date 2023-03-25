@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddamianjv4a2c"]
+
+[ext_resource type="PackedScene" uid="uid://d14rapwaaw1u2" path="res://level_abd_mechanics/Door.gltf" id="1_ju0dy"]
+
+[node name="Door" instance=ExtResource("1_ju0dy")]

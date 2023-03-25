@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://deqvh5xa1vsba"]
+
+[ext_resource type="PackedScene" uid="uid://6sxn06c6u8ge" path="res://level_abd_mechanics/Stairs_Small.gltf" id="1_yauwm"]
+
+[node name="Stairs_Small" instance=ExtResource("1_yauwm")]

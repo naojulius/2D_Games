@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdb6y88thdyk1"]
+
+[ext_resource type="PackedScene" uid="uid://rx4ij4p1xrfi" path="res://level_abd_mechanics/Spikes.gltf" id="1_s0exr"]
+
+[node name="Spikes" instance=ExtResource("1_s0exr")]

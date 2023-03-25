@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf0wuqa8d0b4c"]
+
+[ext_resource type="PackedScene" uid="uid://c470ws5yfi068" path="res://level_abd_mechanics/Bomb.gltf" id="1_ikwsl"]
+
+[node name="Bomb" instance=ExtResource("1_ikwsl")]

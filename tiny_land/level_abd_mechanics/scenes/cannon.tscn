@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c31egan4cme0x"]
+
+[ext_resource type="PackedScene" uid="uid://crvof3pilovuc" path="res://level_abd_mechanics/Cannon.gltf" id="1_5omu8"]
+
+[node name="Cannon" instance=ExtResource("1_5omu8")]

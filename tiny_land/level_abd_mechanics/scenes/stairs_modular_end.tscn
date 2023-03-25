@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1ijuux1uutk4"]
+
+[ext_resource type="PackedScene" uid="uid://b2hc3ans3r2vi" path="res://level_abd_mechanics/Stairs_Modular_End.gltf" id="1_nukh4"]
+
+[node name="Stairs_Modular_End" instance=ExtResource("1_nukh4")]

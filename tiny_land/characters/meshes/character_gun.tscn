@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://drau8ugi6eyiw"]
+
+[ext_resource type="PackedScene" uid="uid://dgu7ec3uk267" path="res://characters/meshes/Character_Gun.gltf" id="1_x8ccr"]
+
+[node name="Character_Gun" instance=ExtResource("1_x8ccr")]
+
+[node name="Skeleton3D" parent="CharacterArmature" index="0"]
+bones/1/position = Vector3(0.547235, 0.717866, -0.529915)
+bones/1/rotation = Quaternion(1.03588e-05, -0.0407634, 0.999169, 1.58426e-06)
+bones/2/position = Vector3(0.00215298, 0.77612, 0.15863)
+bones/2/rotation = Quaternion(0.13844, 1.18061e-07, 8.2517e-08, 0.990371)
+bones/4/rotation = Quaternion(0.0375166, 4.42044e-07, 2.07545e-08, 0.999296)
+bones/5/rotation = Quaternion(-0.0104898, -0.0762468, 0.0513253, 0.995712)
+bones/6/rotation = Quaternion(-0.0256697, 2.33132e-05, 0.000139967, 0.999671)
+bones/7/rotation = Quaternion(-0.0541406, -0.000597035, -0.000968151, 0.998533)
+bones/9/rotation = Quaternion(-0.249116, -0.0375628, -0.00779798, 0.967714)
+bones/10/rotation = Quaternion(-0.480045, -0.104733, 0.189172, 0.850178)
+bones/12/rotation = Quaternion(-0.254015, 0.0400017, 0.00785282, 0.966341)
+bones/13/rotation = Quaternion(-0.485195, 0.102689, -0.183212, 0.848807)
+bones/14/position = Vector3(0.133202, 0.140659, 0.0153003)
+bones/14/rotation = Quaternion(-0.0246867, -0.0110928, -0.409758, 0.911793)
+bones/15/rotation = Quaternion(-0.502038, -0.590486, -0.621848, 0.112201)
+bones/16/rotation = Quaternion(-0.0625871, 0.0615021, -0.614129, 0.784312)
+bones/17/rotation = Quaternion(0.0489682, 0.554807, -0.0323033, 0.829908)
+bones/18/position = Vector3(-0.13313, 0.140573, 0.015239)
+bones/18/rotation = Quaternion(-0.0246864, 0.0110934, 0.409758, 0.911793)
+bones/19/rotation = Quaternion(-0.474546, 0.527091, 0.376932, 0.595738)
+bones/20/rotation = Quaternion(0.107409, -0.274412, 0.76171, 0.577026)
+bones/21/rotation = Quaternion(-0.0310257, -0.245284, 0.0234492, 0.968671)
+bones/23/rotation = Quaternion(0.914349, 0.0210545, 0.00840102, -0.404291)
+bones/24/rotation = Quaternion(0.504878, 0.00753889, 0.0173614, 0.862983)
+bones/25/rotation = Quaternion(0.703442, -0.0213019, 0.00175165, 0.710431)
+bones/26/rotation = Quaternion(0.283092, -0.00315347, -0.0186628, 0.958906)
+bones/27/position = Vector3(0.543805, -0.625439, 0.697346)
+bones/27/rotation = Quaternion(0.329888, 1.12536e-07, 1.96629e-07, 0.94402)
+bones/28/position = Vector3(-0.544612, 0.368859, 0.347657)
+bones/28/rotation = Quaternion(-5.57928e-06, 0.932911, 0.360108, -9.11621e-06)
+bones/29/position = Vector3(-0.541183, 0.614245, 1.15396)
+bones/29/rotation = Quaternion(-3.55273e-15, -5.96046e-07, 3.38813e-21, 1)
+
+[node name="Gun" parent="CharacterArmature/Skeleton3D" index="0"]
+transform = Transform3D(0.99949, -0.00976801, 0.0304149, 0.0133918, 0.992522, -0.121327, -0.0290023, 0.121673, 0.992146, -0.652581, 0.957807, 0.326259)
+bone_idx = 22

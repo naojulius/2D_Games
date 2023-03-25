@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://nrev1em3skrg"]
+
+[ext_resource type="PackedScene" uid="uid://bvhwerbxqn2pv" path="res://natures/Fruit.gltf" id="1_xe45j"]
+
+[node name="Fruit" instance=ExtResource("1_xe45j")]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://8jxw14p4850l"]
+
+[ext_resource type="PackedScene" uid="uid://dx0x1tsdnpt46" path="res://level_abd_mechanics/Lever.gltf" id="1_2r16w"]
+
+[node name="Lever" instance=ExtResource("1_2r16w")]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://by2d2x1bjkkew"]
+
+[ext_resource type="PackedScene" uid="uid://odnfy043g2gy" path="res://natures/Grass_3.gltf" id="1_kr15l"]
+
+[node name="Grass_3" instance=ExtResource("1_kr15l")]

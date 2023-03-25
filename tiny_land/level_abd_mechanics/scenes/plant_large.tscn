@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://wtviy35uxgiq"]
+
+[ext_resource type="PackedScene" uid="uid://m0cvaleppm1r" path="res://level_abd_mechanics/Plant_Large.gltf" id="1_abwu4"]
+
+[node name="Plant_Large" instance=ExtResource("1_abwu4")]

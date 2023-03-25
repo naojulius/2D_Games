@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwkgkkvkygwfa"]
+
+[ext_resource type="PackedScene" uid="uid://c7vk5d2ma0j7e" path="res://level_abd_mechanics/Bridge_Modular_Center.gltf" id="1_eupa1"]
+
+[node name="Bridge_Modular_Center" instance=ExtResource("1_eupa1")]

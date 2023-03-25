@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3e5dsvumgkyr"]
+
+[ext_resource type="PackedScene" uid="uid://c221cs4xlumto" path="res://level_abd_mechanics/Tower.gltf" id="1_xluts"]
+
+[node name="Tower" instance=ExtResource("1_xluts")]

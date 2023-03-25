@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cean5yn5xs4kv"]
+
+[ext_resource type="PackedScene" uid="uid://1uefptyyb74n" path="res://level_abd_mechanics/Hazard_Saw.gltf" id="1_2ll6a"]
+
+[node name="Hazard_Saw" instance=ExtResource("1_2ll6a")]

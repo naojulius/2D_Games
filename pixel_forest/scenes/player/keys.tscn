@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://dalvf30xilr4"]
+
+[ext_resource type="Texture2D" uid="uid://chqud4mwagevs" path="res://textures/keys/A.png" id="1_70fcb"]
+[ext_resource type="Texture2D" uid="uid://ba5m803qido7q" path="res://textures/keys/F.png" id="1_758ap"]
+[ext_resource type="Script" path="res://scenes/player/keys.gd" id="1_e6a1a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17wdo"]
+atlas = ExtResource("1_70fcb")
+region = Rect2(0, 0, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqslu"]
+atlas = ExtResource("1_70fcb")
+region = Rect2(17, 0, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uark1"]
+atlas = ExtResource("1_758ap")
+region = Rect2(0, 0, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct0fg"]
+atlas = ExtResource("1_758ap")
+region = Rect2(17, 0, 17, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a74ai"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17wdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqslu")
+}],
+"loop": true,
+"name": &"a",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uark1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ct0fg")
+}],
+"loop": true,
+"name": &"f",
+"speed": 5.0
+}]
+
+[node name="Keys" type="Node2D" groups=["keyboard"]]
+script = ExtResource("1_e6a1a")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a74ai")
+animation = &"a"

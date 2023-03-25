@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj6xxyjejerm5"]
+
+[ext_resource type="PackedScene" uid="uid://dc75wmkhox8wj" path="res://scenes/vfx/dark.tscn" id="1_828gd"]
+
+[node name="VFX" type="Node2D"]
+
+[node name="Dark2" parent="." instance=ExtResource("1_828gd")]

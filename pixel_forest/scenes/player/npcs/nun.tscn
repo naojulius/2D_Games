@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://bynu00h71bppa"]
+
+[ext_resource type="Script" path="res://scenes/player/npcs/nun.gd" id="1_ayh3m"]
+[ext_resource type="Shader" path="res://scripts/pixelate.gdshader" id="1_deh8e"]
+[ext_resource type="Texture2D" uid="uid://bjlewby84eqsl" path="res://textures/characters/Nun - Tall/TallNun_Idle + Walk_1.png" id="2_ggo5c"]
+[ext_resource type="Texture2D" uid="uid://dm8disbd5pbkt" path="res://textures/characters/Nun - Tall/TallNun_Idle + Walk_2.png" id="3_sy5c5"]
+[ext_resource type="Texture2D" uid="uid://ckmjinlar8f5t" path="res://textures/characters/Nun - Tall/TallNun_Idle + Walk_3.png" id="4_3avnh"]
+[ext_resource type="Texture2D" uid="uid://cl6eb7xwecq26" path="res://textures/characters/Nun - Tall/TallNun_Idle + Walk_4.png" id="5_hj28p"]
+[ext_resource type="PackedScene" uid="uid://bf103oyyesidr" path="res://bubble_speech/bubble_speech.tscn" id="7_oa0gn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_svql2"]
+shader = ExtResource("1_deh8e")
+shader_parameter/amount = 40
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6xbmh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ggo5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sy5c5")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ggo5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sy5c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3avnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hj28p")
+}],
+"loop": true,
+"name": &"WALK",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ot0c"]
+radius = 6.27273
+height = 18.3636
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jejjs"]
+radius = 10.9106
+
+[node name="Nun" type="CharacterBody2D"]
+scale = Vector2(1.1, 1.1)
+script = ExtResource("1_ayh3m")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_svql2")
+sprite_frames = SubResource("SpriteFrames_6xbmh")
+animation = &"IDLE"
+autoplay = "IDLE"
+frame_progress = 0.977357
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.0909091, 8.09091)
+shape = SubResource("CapsuleShape2D_2ot0c")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.909095, 8.90909)
+shape = SubResource("CircleShape2D_jejjs")
+
+[node name="BubbleSpeech" parent="." instance=ExtResource("7_oa0gn")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

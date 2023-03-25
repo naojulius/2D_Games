@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmie08vwbo2rf"]
+
+[ext_resource type="Script" path="res://games/characters/dude.gd" id="1_nmcwg"]
+[ext_resource type="PackedScene" uid="uid://dtak44er5xj54" path="res://games/characters/players/1/mesh.tscn" id="2_08em0"]
+[ext_resource type="PackedScene" uid="uid://bbkyten51rmg0" path="res://games/weapons/weapons.tscn" id="3_ck5h2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_spt8m"]
+radius = 5.0
+height = 10.0
+
+[node name="Dude" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_nmcwg")
+
+[node name="Mesh" parent="." instance=ExtResource("2_08em0")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+position_smoothing_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_spt8m")
+
+[node name="Weapons" parent="." instance=ExtResource("3_ck5h2")]

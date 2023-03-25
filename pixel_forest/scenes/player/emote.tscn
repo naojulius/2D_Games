@@ -1,0 +1,95 @@
+[gd_scene load_steps=15 format=3 uid="uid://orjnl4sq8mo2"]
+
+[ext_resource type="Texture2D" uid="uid://hj1yrdu1lri6" path="res://textures/emotes/pipo-popupemotes018.png" id="1_kwkq7"]
+[ext_resource type="Script" path="res://scripts/emote.gd" id="1_vqcmc"]
+[ext_resource type="Texture2D" uid="uid://ruvdojwi08h3" path="res://textures/emotes/pipo-popupemotes001.png" id="2_30q8d"]
+[ext_resource type="Texture2D" uid="uid://c07xwom6rw0du" path="res://textures/emotes/pipo-popupemotes009.png" id="3_ynbhs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2wj5"]
+atlas = ExtResource("1_kwkq7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11ts3"]
+atlas = ExtResource("1_kwkq7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jr458"]
+atlas = ExtResource("1_kwkq7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfyri"]
+atlas = ExtResource("2_30q8d")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkfym"]
+atlas = ExtResource("2_30q8d")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81w0r"]
+atlas = ExtResource("2_30q8d")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8sak"]
+atlas = ExtResource("3_ynbhs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2txm"]
+atlas = ExtResource("3_ynbhs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa6re"]
+atlas = ExtResource("3_ynbhs")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0tfyc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2wj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11ts3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jr458")
+}],
+"loop": true,
+"name": &"Chat",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfyri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkfym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81w0r")
+}],
+"loop": true,
+"name": &"Exclamation",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8sak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2txm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa6re")
+}],
+"loop": true,
+"name": &"Heart",
+"speed": 10.0
+}]
+
+[node name="Emote" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_vqcmc")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0tfyc")
+animation = &"Chat"

@@ -1,0 +1,129 @@
+[gd_scene load_steps=13 format=3 uid="uid://dwimy343eatef"]
+
+[ext_resource type="Texture2D" uid="uid://dvs7i5jggragg" path="res://assets/textures/Objects/Potion/Blue Potion.png" id="1_2djvq"]
+[ext_resource type="Script" path="res://games/objects/potions.gd" id="1_bgsml"]
+[ext_resource type="Texture2D" uid="uid://b24of8o35403w" path="res://assets/textures/Objects/Potion/Blue Potion 3.png" id="2_3dvpg"]
+[ext_resource type="Texture2D" uid="uid://c5us7mroqlxk2" path="res://assets/textures/Objects/Potion/Blue Potion 2.png" id="3_4ah31"]
+[ext_resource type="Texture2D" uid="uid://bqwyaexl6hfc7" path="res://assets/textures/Objects/Potion/Red Potion.png" id="4_xd8s6"]
+[ext_resource type="Texture2D" uid="uid://cqt2ugeh0225y" path="res://assets/textures/Objects/Potion/Red Potion 3.png" id="5_rndxv"]
+[ext_resource type="Texture2D" uid="uid://ysjimcy5s43u" path="res://assets/textures/Objects/Potion/Red Potion 2.png" id="6_yfu1w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ywnvl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2djvq")
+}],
+"loop": true,
+"name": &"blue_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3dvpg")
+}],
+"loop": true,
+"name": &"blue_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4ah31")
+}],
+"loop": true,
+"name": &"blue_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xd8s6")
+}],
+"loop": true,
+"name": &"red_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_rndxv")
+}],
+"loop": true,
+"name": &"red_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_yfu1w")
+}],
+"loop": true,
+"name": &"red_3",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_3bds7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7ec6d"]
+resource_name = "play"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -20), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4dj7f"]
+_data = {
+"RESET": SubResource("Animation_3bds7"),
+"play": SubResource("Animation_7ec6d")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r2lhf"]
+radius = 27.5
+
+[node name="Potions" type="Node2D"]
+z_index = 1
+position = Vector2(0, -2)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_bgsml")
+
+[node name="Mesh" type="Node2D" parent="."]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Mesh"]
+sprite_frames = SubResource("SpriteFrames_ywnvl")
+animation = &"blue_1"
+autoplay = "blue_1"
+frame_progress = 0.030693
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mesh"]
+root_node = NodePath("../..")
+autoplay = "play"
+libraries = {
+"": SubResource("AnimationLibrary_4dj7f")
+}
+
+[node name="Area" type="Area2D" parent="Mesh"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mesh/Area"]
+shape = SubResource("CircleShape2D_r2lhf")
+debug_color = Color(0.615686, 0.309804, 0.419608, 0.419608)
+
+[connection signal="body_entered" from="Mesh/Area" to="." method="_on_area_body_entered"]

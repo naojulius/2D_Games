@@ -1,0 +1,201 @@
+[gd_scene load_steps=25 format=3 uid="uid://byyvt1sj6263p"]
+
+[ext_resource type="Script" path="res://games/characters/enemy.gd" id="1_ojb8d"]
+[ext_resource type="Script" path="res://games/characters/Mesh.gd" id="2_6us80"]
+[ext_resource type="Texture2D" uid="uid://7n7tiy2ujp54" path="res://assets/textures/characters/enemies/Golem/Golem_Idle_1.png" id="2_iw0do"]
+[ext_resource type="Texture2D" uid="uid://tf4jk31t1fuv" path="res://assets/textures/characters/enemies/Golem/Golem_Idle_2.png" id="3_wtlo6"]
+[ext_resource type="Texture2D" uid="uid://btfw52jd13drw" path="res://assets/textures/characters/enemies/Golem/Golem_Idle_3.png" id="4_wqfqs"]
+[ext_resource type="Texture2D" uid="uid://dvnpbjwdy2ocl" path="res://assets/textures/characters/enemies/Golem/Golem_Idle_4.png" id="5_xsh8b"]
+[ext_resource type="Texture2D" uid="uid://bvb48nv0end85" path="res://assets/textures/characters/enemies/Golem/Golem_Idle_5.png" id="6_tk8ui"]
+[ext_resource type="Texture2D" uid="uid://belq524juejkd" path="res://assets/textures/characters/enemies/Golem/Golem_Idle_6.png" id="7_e17my"]
+[ext_resource type="Texture2D" uid="uid://77vtmerpl4py" path="res://assets/textures/characters/enemies/Golem/Golem_Walk_1.png" id="8_fsogc"]
+[ext_resource type="Texture2D" uid="uid://crlwfswa7yf1x" path="res://assets/textures/characters/enemies/Golem/Golem_Walk_2.png" id="9_pxr1m"]
+[ext_resource type="Texture2D" uid="uid://cfob0ks7mp2rh" path="res://assets/textures/characters/enemies/Golem/Golem_Walk_3.png" id="10_uaap2"]
+[ext_resource type="Texture2D" uid="uid://cj34ssuxyd0jk" path="res://assets/textures/characters/enemies/Golem/Golem_Walk_4.png" id="11_pq1cc"]
+[ext_resource type="Texture2D" uid="uid://cgykskltomrh8" path="res://assets/textures/characters/enemies/Golem/Golem_Walk_5.png" id="12_1ikqe"]
+[ext_resource type="Texture2D" uid="uid://dunyo7y8e3vq4" path="res://assets/textures/characters/enemies/Golem/Golem_Walk_6.png" id="13_bimqb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ix6oe"]
+radius = 13.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_em33x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iw0do")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wtlo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wqfqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xsh8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tk8ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e17my")
+}],
+"loop": true,
+"name": &"IDLE",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_fsogc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pxr1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_uaap2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pq1cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1ikqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bimqb")
+}],
+"loop": true,
+"name": &"WALK",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_mv30w"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["IDLE"]
+}
+
+[sub_resource type="Animation" id="Animation_cdvhi"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["WALK"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p2xo3"]
+_data = {
+"IDLE": SubResource("Animation_mv30w"),
+"WALK": SubResource("Animation_cdvhi")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6b3vq"]
+animation = &"WALK"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3cmpg"]
+animation = &"IDLE"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_46nbp"]
+input_0/name = "IDLE"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "WALK"
+input_1/auto_advance = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_bb8x4"]
+graph_offset = Vector2(-6.10352e-05, 0)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_3cmpg")
+nodes/Animation/position = Vector2(47, 78)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_6b3vq")
+"nodes/Animation 2/position" = Vector2(0, 180)
+nodes/move/node = SubResource("AnimationNodeTransition_46nbp")
+nodes/move/position = Vector2(200, 80)
+nodes/output/position = Vector2(420, 80)
+node_connections = [&"output", 0, &"move", &"move", 0, &"Animation", &"move", 1, &"Animation 2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_77h5g"]
+radius = 106.888
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_ojb8d")
+SPEED = 40.0
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 17)
+shape = SubResource("CapsuleShape2D_ix6oe")
+
+[node name="Mesh" type="Node2D" parent="."]
+script = ExtResource("2_6us80")
+_name = "Gollem"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Mesh"]
+sprite_frames = SubResource("SpriteFrames_em33x")
+animation = &"IDLE"
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mesh"]
+libraries = {
+"": SubResource("AnimationLibrary_p2xo3")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="Mesh"]
+tree_root = SubResource("AnimationNodeBlendTree_bb8x4")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/move/current_state = "IDLE"
+parameters/move/transition_request = ""
+parameters/move/current_index = 0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 30.0
+target_desired_distance = 20.0
+
+[node name="TrackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrackArea"]
+shape = SubResource("CircleShape2D_77h5g")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[connection signal="body_entered" from="TrackArea" to="." method="_on_track_area_body_entered"]
+[connection signal="body_exited" from="TrackArea" to="." method="_on_track_area_body_exited"]
